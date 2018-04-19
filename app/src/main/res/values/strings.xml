@@ -5,5 +5,9 @@
     <string name="text_Button2">CLINIC</string>
     <string name="text_Button3">MOVIES</string>
     <string name="text_Button4">TAKE A QUIZ!</string>
+    <string name="multiple">Multiple-Choice</string>
+    <string name="truefalse">True or False</string>
+    <string name="listquestions">List of Questoions</string>
+    <string name="quit">Quit</string>
 
 </resources>
