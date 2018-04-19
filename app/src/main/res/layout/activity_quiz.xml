@@ -25,7 +25,6 @@
             android:text="@string/multiple"
             android:textSize="20sp"
             android:textStyle="bold|italic" />
-
         <Button
             android:id="@+id/btntrue"
             android:layout_width="fill_parent"
