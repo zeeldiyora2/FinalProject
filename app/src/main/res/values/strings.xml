@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+
+    <string name="text_Button1">BUS ROUTE</string>
+    <string name="text_Button2">CLINIC</string>
+    <string name="text_Button3">MOVIES</string>
+    <string name="text_Button4">TAKE A QUIZ!</string>
+
+</resources>
