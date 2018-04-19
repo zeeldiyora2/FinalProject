@@ -16,7 +16,7 @@
     <string name="firstName">Имя</string>
     <string name="lastName">Фамилия</string>
     <string name="address">Адрес</string>
-    <string name="birth">день рождения</string>
+    <string name="age">возраст</string>
     <string name="phone">Номер телефона</string>
     <string name="health">Номер карточки здоровья</string>
     <string name="reason">Причина посещения</string>
