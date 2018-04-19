@@ -1,12 +1,15 @@
 package com.example.poly.finalproject;
 
+
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,59 +18,92 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class ClinicActivity extends AppCompatActivity {
+public class PatientForm extends Activity{
 
-    protected static final String ACTIVITY_NAME = "ClinicActivity";
+    protected static final String ACTIVITY_NAME = "PatientForm";
+    Button patBackBtn;
+    Button patSaveBtn;
 
-    Button btnDoctor;
-    Button btnDentist;
-    Button btnOptometrist;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clinic_acitivity);
-        Log.i(ACTIVITY_NAME, "In OnCreate() of ClinicActivity");
+        setContentView(R.layout.activity_patient_form);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        btnDoctor = (Button) findViewById(R.id.docBtn);
-        btnDentist = (Button) findViewById(R.id.denBtn);
-        btnOptometrist = (Button) findViewById(R.id.optBtn);
+        Intent patIntent = getIntent();
+        String patSelection = patIntent.getStringExtra("Form");
 
-        btnDoctor.setOnClickListener(new View.OnClickListener() {
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        switch(patSelection)
+        {
+            case "DoctorForm":
+
+                DoctorFragment patSelDoc = new DoctorFragment ();
+                fragmentTransaction.replace(R.id.patFrameLayout,patSelDoc);
+                fragmentTransaction.commit ();
+                break;
+
+            case "DentistForm":
+                DentistFragment patSelDen = new DentistFragment ();
+                fragmentTransaction.replace(R.id.patFrameLayout,patSelDen);
+                fragmentTransaction.commit ();
+                break;
+
+            case "OptometristForm":
+                OptometristFragment patSelOpt = new OptometristFragment ();
+                fragmentTransaction.replace(R.id.patFrameLayout,patSelOpt);
+                fragmentTransaction.commit ();
+                break;
+            default: break;
+        }
+
+
+        patBackBtn = (Button) findViewById(R.id.patBack);
+        patSaveBtn = (Button) findViewById(R.id.patSave);
+
+        patBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ClinicActivity.this, PatientForm.class);
-                intent.putExtra("Form","DoctorForm");
+                Intent intent = new Intent(PatientForm.this, ClinicActivity.class);
                 startActivityForResult(intent, 50);
-                Log.i(ACTIVITY_NAME, "Doctor was selected");
             }
         });
 
-        btnDentist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ClinicActivity.this, PatientForm.class);
-                intent.putExtra("Form","DentistForm");
-                startActivityForResult(intent, 50);
-                Log.i(ACTIVITY_NAME, "Dentist was selected");
-            }
-        });
 
-        btnOptometrist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ClinicActivity.this, PatientForm.class);
-                intent.putExtra("Form","OptometristForm");
-                startActivityForResult(intent, 50);
-                Log.i(ACTIVITY_NAME, "Optometrist was selected");
-            }
-        });
+
+//        patSaveBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent clinic = getIntent();
+//                String patSelection = clinic.getStringExtra("Form"); // will return "FirstKeyValue
+//                Log.i("Value of ",patSelection);
+//                Intent intent;
+//                switch(patSelection){
+//                    case ("DoctorForm"):
+//                        intent = new Intent(PatientForm.this, DoctorForm.class);
+//                        startActivityForResult(intent,50);
+//                        break;
+//                    case ("DentistForm"):
+//                        intent = new Intent(PatientForm.this, DentistForm.class);
+//                        startActivityForResult(intent,50);
+//                        break;
+//                    case ("OptometristForm"):
+//                        intent = new Intent(PatientForm.this, OptometristForm.class);
+//                        startActivityForResult(intent,50);
+//                        break;
+//                }
+//
+//
+//            }
+//        });
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_patient, menu);
@@ -83,13 +119,13 @@ public class ClinicActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.patMovies:
                 Log.d("ToolBar", "Movies Selected");
-                LayoutInflater inflater = ClinicActivity.this.getLayoutInflater();
-                patBuilder = new AlertDialog.Builder(ClinicActivity.this);
+                LayoutInflater patMoviInflater = PatientForm.this.getLayoutInflater();
+                patBuilder = new AlertDialog.Builder(PatientForm.this);
                 patBuilder.setMessage("Do you want to exit the Patient Form and go to Movies app")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent mIntent = new Intent(ClinicActivity.this, MoviesActivity.class);
+                                Intent mIntent = new Intent(PatientForm.this, MoviesActivity.class);
                                 startActivityForResult(mIntent,50);
                             }
                         })
@@ -101,19 +137,19 @@ public class ClinicActivity extends AppCompatActivity {
                             }
                         });
 
-                AlertDialog dialog = patBuilder.create();
-                dialog.show();
+                AlertDialog patMovieDialog = patBuilder.create();
+                patMovieDialog.show();
                 break;
 
             case R.id.patQuiz:
                 Log.d("ToolBar", "Quiz Selected");
-                LayoutInflater patQuizInflater = ClinicActivity.this.getLayoutInflater();
-                patBuilder = new AlertDialog.Builder(ClinicActivity.this);
+                LayoutInflater patQuizInflater = PatientForm.this.getLayoutInflater();
+                patBuilder = new AlertDialog.Builder(PatientForm.this);
                 patBuilder.setMessage("Do you want to exit the Patient Form and go to Quiz Creator app")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent mIntent = new Intent(ClinicActivity.this, QuizActivity.class);
+                                Intent mIntent = new Intent(PatientForm.this, QuizActivity.class);
                                 startActivityForResult(mIntent,50);
                             }
                         })
@@ -131,13 +167,13 @@ public class ClinicActivity extends AppCompatActivity {
 
             case R.id.patOCTranspo:
                 Log.d("ToolBar", "OCTranspo Selected");
-                LayoutInflater patOCInflater = ClinicActivity.this.getLayoutInflater();
-                patBuilder = new AlertDialog.Builder(ClinicActivity.this);
+                LayoutInflater patOCInflater = PatientForm.this.getLayoutInflater();
+                patBuilder = new AlertDialog.Builder(PatientForm.this);
                 patBuilder.setMessage("Do you want to exit the Patient Form and go to Quiz Creator app")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent mIntent = new Intent(ClinicActivity.this, TransportActivity.class);
+                                Intent mIntent = new Intent(PatientForm.this, TransportActivity.class);
                                 startActivityForResult(mIntent,50);
                             }
                         })
@@ -155,18 +191,16 @@ public class ClinicActivity extends AppCompatActivity {
 
             case R.id.patAbt:
                 Log.d("ToolBar", "About Selected");
-                LayoutInflater patAbtInflater = ClinicActivity.this.getLayoutInflater();
-                patBuilder = new AlertDialog.Builder(ClinicActivity.this);
+                LayoutInflater patAbtInflater = PatientForm.this.getLayoutInflater();
+                patBuilder = new AlertDialog.Builder(PatientForm.this);
                 patBuilder.setMessage("Version 1.0 by Zeel Diyora");
 
                 AlertDialog patAbtDialog = patBuilder.create();
                 patAbtDialog.show();
                 break;
-
 //                Log.d("Toolbar", "About Selected");
 //                Toast.makeText(getApplicationContext(), "Version 1.0 by Zeel Diyora", Toast.LENGTH_LONG).show();
 //                break;
-
 
         }
 

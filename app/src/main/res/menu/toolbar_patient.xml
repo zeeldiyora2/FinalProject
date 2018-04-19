@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/patMovies"
+        android:title="@string/patMov"
+        android:icon="@drawable/movie"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/patQuiz"
+        android:title="@string/patQuiz"
+        android:icon="@drawable/quiz"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/patOCTranspo"
+        android:title="@string/patOC"
+        android:icon="@drawable/transport"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/patAbt"
+        android:title="@string/patAbout"
+        app:showAsAction="never" />
+
+</menu>

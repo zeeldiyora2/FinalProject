@@ -6,4 +6,36 @@
     <string name="text_Button3">MOVIES</string>
     <string name="text_Button4">TAKE A QUIZ!</string>
 
+    <string name="doc">Doctor</string>
+    <string name="den">Dentist</string>
+    <string name="opt">Optometrist</string>
+    <string name="which">Which Doctor appointment you want to book?</string>
+
+    <string name="patForm">Patient Form</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="address">Address</string>
+    <string name="birth">Birthday</string>
+    <string name="phone">Phone Number</string>
+    <string name="health">Health Card Number</string>
+    <string name="reason">Reason for visitation</string>
+    <string name="save">Save and Submit</string>
+    <string name="back">Back</string>
+    <string name="title_activity_patient_toolbar">PatientToolbar</string>
+    <string name="patAbout">About</string>
+    <string name="patMov">Movies</string>
+    <string name="patOC">OC Transpo</string>
+    <string name="patQuiz">Quiz Creator</string>
+    <string name="patSur">Any Previous Surgeries?</string>
+    <string name="patAll">Any Allergies?</string>
+    <string name="patSubmit">Submit</string>
+    <string name="patBraces">Had any Braces?</string>
+    <string name="patMed">Medical Benefits</string>
+    <string name="patYes">Yes</string>
+    <string name="patNo">No</string>
+    <string name="patGlass">Date for Glasses bought</string>
+    <string name="patStore">Which Store?</string>
+    <string name="patDat">Glasses Purchased Date</string>
+    <string name="patStoreName">Name of the Store</string>
+
 </resources>

@@ -7,4 +7,35 @@
     <string name="text_Button3">АФИША</string>
     <string name="text_Button4">АНКЕТА!</string>
 
+    <string name="doc">Врач</string>
+    <string name="den">Дантист</string>
+    <string name="opt">оптик</string>
+    <string name="which">Какую кандидатуру врача вы хотите забронировать?</string>
+
+    <string name="patForm">Форма пациента</string>
+    <string name="firstName">Имя</string>
+    <string name="lastName">Фамилия</string>
+    <string name="address">Адрес</string>
+    <string name="birth">день рождения</string>
+    <string name="phone">Номер телефона</string>
+    <string name="health">Номер карточки здоровья</string>
+    <string name="reason">Причина посещения</string>
+    <string name="save">Сохранить и отправить</string>
+    <string name="back">назад</string>
+    <string name="patAbout">Около</string>
+    <string name="patMov">Кино</string>
+    <string name="patOC">OC Transpo</string>
+    <string name="patQuiz">Разработчик Quiz</string>
+    <string name="patSur">Любые предыдущие операции?</string>
+    <string name="patAll">Какие-либо аллергии?</string>
+    <string name="patSubmit">Отправить</string>
+    <string name="patBraces">Были ли какие-либо брекеты?</string>
+    <string name="patMed">Медицинский брифинг</string>
+    <string name="patYes">да</string>
+    <string name="patNo">нет</string>
+    <string name="patGlass">Дата покупки очков</string>
+    <string name="patStore">Какой магазин?</string>
+    <string name="patDat">Очки Дата покупки</string>
+    <string name="patStoreName">Имя магазина</string>
+
 </resources>

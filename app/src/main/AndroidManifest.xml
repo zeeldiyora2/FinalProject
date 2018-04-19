@@ -16,10 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClinicActivity" />
+        <activity android:name=".ClinicActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".TransportActivity" />
-        <activity android:name=".MoviesActivity"></activity>
+        <activity android:name=".MoviesActivity" />
+        <activity android:name=".PatientForm"></activity>
     </application>
 
 </manifest>
