@@ -4,10 +4,32 @@
     <string name="text_Button1">BUS ROUTE</string>
     <string name="text_Button2">CLINIC</string>
     <string name="text_Button3">MOVIES</string>
-    <string name="text_Button4">TAKE A QUIZ!</string>
-    <string name="multiple">Multiple-Choice</string>
-    <string name="truefalse">True or False</string>
-    <string name="listquestions">List of Questoions</string>
+    <string name="text_Button4">MY QUIZ MASTER</string>
     <string name="quit">Quit</string>
+    <string name="btnAnswer"> ANSWER </string>
+    <string name="questionContent"> Please type your question here </string>
+    <string name="quiz_creator">Your Quiz</string>
+    <string name="create">New Quiz</string>
+    <string name="choose">Choose Type of Quiz</string>
+    <string name="yourQuiz">The Quiz You Picked</string>
+    <string name="checkAnswer">Check</string>
+    <string name="hint">Hint</string>
+    <string name="multipleChoice">Multiple Choice</string>
+    <string name="Numeric">Numeric</string>
+    <string name="TrueFlase">True or False</string>
+    <string name="noHint">Sorry, I cannot give you any hint!</string>
+    <string name="like">Like</string>
+    <string name="dislike">Dislike</string>
+    <string name="save">Save Question</string>
+    <string name="typeHere">Type your question here</string>
+    <string name="mc">Multiple Choice</string>
+    <string name="tf">True/False</string>
+    <string name="nu">Numeric</string>
+    <string name="enterQuestion">Enter question here</string>
+    <string name="enterAnswer">Enter answer here</string>
+    <string name="trueAnswer">True</string>
+    <string name="falseAnswer">False</string>
+
+
 
 </resources>
