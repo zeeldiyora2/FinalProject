@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProjectMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <item
+        android:id="@+id/octranspo" android:title="@string/text_Button1"
+        android:orderInCategory="100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" app:showAsAction="always"
+        android:icon="@drawable/transport" />
+
+    <item
+        android:id="@+id/clinic"
+        android:orderInCategory="101"
+        android:title="@string/text_Button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" app:showAsAction="always"
+        android:icon="@drawable/medicine" />
+
+    <item
+        android:id="@+id/movie"
+        android:orderInCategory="102"
+        android:title="@string/text_Button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" app:showAsAction="always"
+        android:icon="@drawable/movie"/>
+
+    <item android:id="@+id/help"
+        android:title="Help"
+        android:layout_width="wrap_content"
+        app:showAsAction="never"/>
+
+</menu>
