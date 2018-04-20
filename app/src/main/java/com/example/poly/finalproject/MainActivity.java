@@ -17,10 +17,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonTransport = findViewById(R.id.Button1);
-        Button buttonClinic    = findViewById(R.id.Button2);
-        Button buttonMovies    = findViewById(R.id.Button3);
-        Button buttonQuiz      = findViewById(R.id.Button4);
+        Button buttonTransport = (Button) findViewById(R.id.Button1);
+        Button buttonClinic    = (Button) findViewById(R.id.Button2);
+        Button buttonMovies    = (Button) findViewById(R.id.Button3);
+        Button buttonQuiz      = (Button) findViewById(R.id.Button4);
 
         buttonTransport.setOnClickListener(new View.OnClickListener() {
             @Override
